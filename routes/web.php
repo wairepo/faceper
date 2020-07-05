@@ -13,11 +13,15 @@
 |
 */
 
+// Route::get('/{any?}', function (){
+//     return view('app');
+// })->where('any', '^(?!api\/)[\/\w\.-]*');
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
-// Auth::routes();
+Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
+Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
@@ -33,4 +37,9 @@
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
+
+
+
+// Route::prefix('livenow')->group(function () {
+//     Route::get('list', 'HomeController@list');
+// });

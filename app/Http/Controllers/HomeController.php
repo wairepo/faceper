@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class HomeController extends Controller
 {
@@ -24,5 +25,10 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function list()
+    {
+        return response()->json([1,2,3,4]);
     }
 }
