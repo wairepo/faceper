@@ -7,6 +7,7 @@ import list_customer from '@/js/layouts/customers/List';
 import settings from '@/js/layouts/settings/Settings';
 import Live_Now from '@/js/layouts/live_now/Create';
 import not_found from '@/js/views/404';
+import login from '@/js/pages/Login';
 
 Vue.use(VueRouter)
 
@@ -49,6 +50,12 @@ const router = new VueRouter({
 			name: 'not_found',
 			meta: { layout: "blank" },
 			component: not_found
+		},
+		{
+			path: '/login',
+			name: 'login',
+			meta: { layout: "blank" },
+			component: login
 		}
 
 	]

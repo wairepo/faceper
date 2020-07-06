@@ -1,6 +1,6 @@
 <?php
 
-// use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +20,16 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
 Auth::routes();
+
+Route::get('redirect', 'SocialAuthFacebookController@redirect');
+Route::get('callback', 'SocialAuthFacebookController@callback');
+
+
+
+Route::get('/{any}', 'HomeController@index')->where('any', '.*');
+
+Route::get('/livenow', 'HomeController@list')->name('home');
 
 // Route::get('/home', 'HomeController@index')->name('home');
 

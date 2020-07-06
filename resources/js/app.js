@@ -4,6 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+// const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
+
 import './bootstrap'
 import Vue from 'vue'
 import Vuetify from 'vuetify'
