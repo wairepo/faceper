@@ -1969,7 +1969,8 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    axios.get('/api/livenow', {}).then(function (response) {// $this.info = response.data
+    axios.get('/api/livenow', {}).then(function (response) {
+      $this.info = response.data;
     });
   }
 });

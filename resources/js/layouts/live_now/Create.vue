@@ -12,11 +12,11 @@ export default {
 		}
 	},
 	mounted() {
-		axios.get('/api/livenow').then(response => (
+		axios.get('/api/livenow', {}).then(function (response) {
+			$this.info = response.data
+		})
 
-			console.log(response.data)
 
-			))
 
 	}
 };
