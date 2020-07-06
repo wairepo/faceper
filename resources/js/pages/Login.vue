@@ -48,7 +48,7 @@ export default {
             axios.get('/redirect', {
             })
             .then(function (response) {
-                console.log(response);
+                // console.log(response);
             })
         }
     },

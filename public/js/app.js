@@ -1952,9 +1952,27 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/layouts/live_now/Create.vue?vue&type=script&lang=js& ***!
   \***********************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/kokwai/faceper/resources/js/layouts/live_now/Create.vue: Unexpected token (19:3)\n\n\u001b[0m \u001b[90m 17 | \u001b[39m\t\t\t\u001b[90m// info = response.data;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 18 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 | \u001b[39m\t\t\t))\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m\t\t\t\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 21 | \u001b[39m\t}\u001b[0m\n\u001b[0m \u001b[90m 22 | \u001b[39m}\u001b[33m;\u001b[39m\u001b[0m\n    at Parser._raise (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:754:17)\n    at Parser.raiseWithData (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:747:17)\n    at Parser.raise (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:741:17)\n    at Parser.unexpected (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:8844:16)\n    at Parser.parseParenAndDistinguishExpression (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:10340:12)\n    at Parser.parseExprAtom (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:10044:21)\n    at Parser.parseExprSubscripts (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9693:23)\n    at Parser.parseMaybeUnary (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9673:21)\n    at Parser.parseExprOps (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9543:23)\n    at Parser.parseMaybeConditional (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9516:23)\n    at Parser.parseMaybeAssign (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9471:21)\n    at Parser.parseFunctionBody (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:10738:24)\n    at Parser.parseArrowExpression (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:10714:10)\n    at Parser.parseExprAtom (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9997:18)\n    at Parser.parseExprSubscripts (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9693:23)\n    at Parser.parseMaybeUnary (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9673:21)\n    at Parser.parseExprOps (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9543:23)\n    at Parser.parseMaybeConditional (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9516:23)\n    at Parser.parseMaybeAssign (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9471:21)\n    at Parser.parseExprListItem (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:10829:18)\n    at Parser.parseCallExpressionArguments (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9887:22)\n    at Parser.parseSubscript (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9787:31)\n    at Parser.parseSubscripts (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9716:19)\n    at Parser.parseExprSubscripts (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9699:17)\n    at Parser.parseMaybeUnary (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9673:21)\n    at Parser.parseExprOps (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9543:23)\n    at Parser.parseMaybeConditional (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9516:23)\n    at Parser.parseMaybeAssign (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9471:21)\n    at Parser.parseExpression (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9423:23)\n    at Parser.parseStatementContent (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:11322:23)\n    at Parser.parseStatement (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:11193:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:11768:25)\n    at Parser.parseBlockBody (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:11754:10)\n    at Parser.parseBlock (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:11738:10)\n    at Parser.parseFunctionBody (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:10745:24)\n    at Parser.parseFunctionBodyAndFinish (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:10728:10)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      info: ""
+    };
+  },
+  mounted: function mounted() {
+    axios.get('/api/livenow', {}).then(function (response) {// $this.info = response.data
+    });
+  }
+});
 
 /***/ }),
 
@@ -2012,8 +2030,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     facebook_login: function facebook_login(event) {
-      axios.get('/redirect', {}).then(function (response) {
-        console.log(response);
+      axios.get('/redirect', {}).then(function (response) {// console.log(response);
       });
     }
   },

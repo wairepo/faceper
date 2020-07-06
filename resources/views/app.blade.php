@@ -7,7 +7,8 @@
   <title>Faceper</title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <!-- <link rel="stylesheet" href="{{ asset('css/material/material-dashboard.css') }}" type="text/css"> -->
+
 </head>
 
 <body class="">
