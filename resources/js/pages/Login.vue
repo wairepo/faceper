@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="container">
-        <div class="row justify-content-center">
+<!--         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Login</div>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <button v-on:click="facebook_login()" class="btn btn-primary">Login with Facebook</button>
     </div>
     
@@ -44,7 +44,6 @@ export default {
     },
     methods: {
         facebook_login: function (event) {
-            console.log(3333)
 
             axios.get('/redirect', {
             })

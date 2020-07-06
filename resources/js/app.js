@@ -10,6 +10,7 @@ import './bootstrap'
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 
+import sidebarJS from '@/js/sidebar.js'
 import Routes from '@/js/routes.js'
 
 import App from '@/js/views/App'
@@ -17,6 +18,7 @@ import Main from '@/js/views/Main'
 import Blank from '@/js/views/Blank'
 
 Vue.use(Vuetify)
+Vue.use(sidebarJS)
 
 Vue.component('main-page', Main);
 Vue.component('blank', Blank);

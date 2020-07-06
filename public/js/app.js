@@ -1952,28 +1952,9 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/layouts/live_now/Create.vue?vue&type=script&lang=js& ***!
   \***********************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      info: ""
-    };
-  },
-  mounted: function mounted() {
-    axios.get('/api/livenow').then(function (response) {
-      return console.log(response.data);
-    });
-  }
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/kokwai/faceper/resources/js/layouts/live_now/Create.vue: Unexpected token (19:3)\n\n\u001b[0m \u001b[90m 17 | \u001b[39m\t\t\t\u001b[90m// info = response.data;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 18 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 | \u001b[39m\t\t\t))\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m\t\t\t\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 21 | \u001b[39m\t}\u001b[0m\n\u001b[0m \u001b[90m 22 | \u001b[39m}\u001b[33m;\u001b[39m\u001b[0m\n    at Parser._raise (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:754:17)\n    at Parser.raiseWithData (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:747:17)\n    at Parser.raise (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:741:17)\n    at Parser.unexpected (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:8844:16)\n    at Parser.parseParenAndDistinguishExpression (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:10340:12)\n    at Parser.parseExprAtom (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:10044:21)\n    at Parser.parseExprSubscripts (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9693:23)\n    at Parser.parseMaybeUnary (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9673:21)\n    at Parser.parseExprOps (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9543:23)\n    at Parser.parseMaybeConditional (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9516:23)\n    at Parser.parseMaybeAssign (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9471:21)\n    at Parser.parseFunctionBody (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:10738:24)\n    at Parser.parseArrowExpression (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:10714:10)\n    at Parser.parseExprAtom (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9997:18)\n    at Parser.parseExprSubscripts (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9693:23)\n    at Parser.parseMaybeUnary (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9673:21)\n    at Parser.parseExprOps (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9543:23)\n    at Parser.parseMaybeConditional (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9516:23)\n    at Parser.parseMaybeAssign (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9471:21)\n    at Parser.parseExprListItem (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:10829:18)\n    at Parser.parseCallExpressionArguments (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9887:22)\n    at Parser.parseSubscript (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9787:31)\n    at Parser.parseSubscripts (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9716:19)\n    at Parser.parseExprSubscripts (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9699:17)\n    at Parser.parseMaybeUnary (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9673:21)\n    at Parser.parseExprOps (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9543:23)\n    at Parser.parseMaybeConditional (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9516:23)\n    at Parser.parseMaybeAssign (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9471:21)\n    at Parser.parseExpression (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:9423:23)\n    at Parser.parseStatementContent (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:11322:23)\n    at Parser.parseStatement (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:11193:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:11768:25)\n    at Parser.parseBlockBody (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:11754:10)\n    at Parser.parseBlock (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:11738:10)\n    at Parser.parseFunctionBody (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:10745:24)\n    at Parser.parseFunctionBodyAndFinish (/Users/kokwai/faceper/node_modules/@babel/parser/lib/index.js:10728:10)");
 
 /***/ }),
 
@@ -2031,7 +2012,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     facebook_login: function facebook_login(event) {
-      console.log(3333);
       axios.get('/redirect', {}).then(function (response) {
         console.log(response);
       });
@@ -38153,8 +38133,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "container" }, [
-      _vm._m(0),
-      _vm._v(" "),
       _c(
         "button",
         {
@@ -38170,73 +38148,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [_vm._v("Login")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("form", { attrs: { method: "POST", action: "" } }, [
-              _c("div", { staticClass: "form-group row" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass: "col-md-4 col-form-label text-md-right",
-                    attrs: { for: "email" }
-                  },
-                  [_vm._v("Email")]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c("input", {
-                    staticClass: "form-control is-invalid",
-                    attrs: {
-                      id: "email",
-                      type: "email",
-                      name: "email",
-                      required: "",
-                      autocomplete: "email",
-                      autofocus: ""
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group row" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass: "col-md-4 col-form-label text-md-right",
-                    attrs: { for: "password" }
-                  },
-                  [_vm._v("Password")]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c("input", {
-                    staticClass: "form-control is-invalid",
-                    attrs: {
-                      id: "password",
-                      type: "password",
-                      name: "password",
-                      required: "",
-                      autocomplete: "current-password"
-                    }
-                  })
-                ])
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -97288,10 +97200,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var vuetify__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuetify */ "./node_modules/vuetify/dist/vuetify.js");
 /* harmony import */ var vuetify__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuetify__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _js_routes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/js/routes.js */ "./resources/js/routes.js");
-/* harmony import */ var _js_views_App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/js/views/App */ "./resources/js/views/App.vue");
-/* harmony import */ var _js_views_Main__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/js/views/Main */ "./resources/js/views/Main.vue");
-/* harmony import */ var _js_views_Blank__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/js/views/Blank */ "./resources/js/views/Blank.vue");
+/* harmony import */ var _js_sidebar_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/js/sidebar.js */ "./resources/js/sidebar.js");
+/* harmony import */ var _js_sidebar_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_js_sidebar_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _js_routes_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/js/routes.js */ "./resources/js/routes.js");
+/* harmony import */ var _js_views_App__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/js/views/App */ "./resources/js/views/App.vue");
+/* harmony import */ var _js_views_Main__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/js/views/Main */ "./resources/js/views/Main.vue");
+/* harmony import */ var _js_views_Blank__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/js/views/Blank */ "./resources/js/views/Blank.vue");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -97305,15 +97219,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vuetify__WEBPACK_IMPORTED_MODULE_2___default.a);
-vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('main-page', _js_views_Main__WEBPACK_IMPORTED_MODULE_5__["default"]);
-vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('blank', _js_views_Blank__WEBPACK_IMPORTED_MODULE_6__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(_js_sidebar_js__WEBPACK_IMPORTED_MODULE_3___default.a);
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('main-page', _js_views_Main__WEBPACK_IMPORTED_MODULE_6__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('blank', _js_views_Blank__WEBPACK_IMPORTED_MODULE_7__["default"]);
 var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   el: '#app',
-  router: _js_routes_js__WEBPACK_IMPORTED_MODULE_3__["default"],
+  router: _js_routes_js__WEBPACK_IMPORTED_MODULE_4__["default"],
   vuetify: new vuetify__WEBPACK_IMPORTED_MODULE_2___default.a(),
   render: function render(h) {
-    return h(_js_views_App__WEBPACK_IMPORTED_MODULE_4__["default"]);
+    return h(_js_views_App__WEBPACK_IMPORTED_MODULE_5__["default"]);
   }
 });
 /* harmony default export */ __webpack_exports__["default"] = (app); // window.Vue = require('vue');
@@ -97942,6 +97858,55 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 
 /***/ }),
 
+/***/ "./resources/js/sidebar.js":
+/*!*********************************!*\
+  !*** ./resources/js/sidebar.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var mobile_menu_visible = 0;
+$(document).on('click', '.navbar-toggler', function () {
+  $toggle = $(this);
+
+  if (mobile_menu_visible == 1) {
+    $('html').removeClass('nav-open');
+    $('.close-layer').remove();
+    setTimeout(function () {
+      $toggle.removeClass('toggled');
+    }, 400);
+    mobile_menu_visible = 0;
+  } else {
+    setTimeout(function () {
+      $toggle.addClass('toggled');
+    }, 430);
+    var $layer = $('<div class="close-layer"></div>');
+
+    if ($('body').find('.main-panel').length != 0) {
+      $layer.appendTo(".main-panel");
+    } else if ($('body').hasClass('off-canvas-sidebar')) {
+      $layer.appendTo(".wrapper-full-page");
+    }
+
+    setTimeout(function () {
+      $layer.addClass('visible');
+    }, 100);
+    $layer.click(function () {
+      $('html').removeClass('nav-open');
+      mobile_menu_visible = 0;
+      $layer.removeClass('visible');
+      setTimeout(function () {
+        $layer.remove();
+        $toggle.removeClass('toggled');
+      }, 400);
+    });
+    $('html').addClass('nav-open');
+    mobile_menu_visible = 1;
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/views/404.vue":
 /*!************************************!*\
   !*** ./resources/js/views/404.vue ***!
@@ -98121,14 +98086,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************!*\
   !*** ./resources/js/views/Main.vue ***!
   \*************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Main_vue_vue_type_template_id_2ad93e50___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Main.vue?vue&type=template&id=2ad93e50& */ "./resources/js/views/Main.vue?vue&type=template&id=2ad93e50&");
 /* harmony import */ var _Main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Main.vue?vue&type=script&lang=js& */ "./resources/js/views/Main.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Main_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -98158,7 +98124,7 @@ component.options.__file = "resources/js/views/Main.vue"
 /*!**************************************************************!*\
   !*** ./resources/js/views/Main.vue?vue&type=script&lang=js& ***!
   \**************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

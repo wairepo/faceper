@@ -18,24 +18,21 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::prefix('auth')->group(function () {
-    Route::post('register', 'AuthController@register');
-    Route::post('login', 'AuthController@login');
-    Route::get('refresh', 'AuthController@refresh');
-    Route::group(['middleware' => 'auth:api'], function(){
-        Route::get('user', 'AuthController@user');
-        Route::post('logout', 'AuthController@logout');
-    });
+// Route::group(['prefix' => 'v1', 'middleware' => 'cors'], function () {
+    // Route::get('redirect', 'SocialAuthFacebookController@redirect');
+    // Route::get('callback', 'SocialAuthFacebookController@callback');
+// });
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/livenow', 'HomeController@list')->name('home');
 });
 
-Route::group(['middleware' => 'auth:api'], function(){
-    // Users
-    Route::get('users', 'UserController@index')->middleware('isAdmin');
-    Route::get('users/{id}', 'UserController@show')->middleware('isAdminOrSelf');
-});
+// Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/livenow', 'HomeController@list')->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/livenow', 'HomeController@list')->name('home');
+// Route::options('{any?}', function (){
+//     return response('',200);
+// })->where('any', '.*');
 
 
 // Route::prefix('livenow')->group(function () {
