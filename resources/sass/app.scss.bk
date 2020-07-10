@@ -1,0 +1,45 @@
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons);@charset "UTF-8";
+
+@import "extras/variables";
+@import "extras/mixins";
+@import "extras/core-bootstrap";
+
+// Core Components
+@import "extras/buttons";
+@import "extras/checkboxes";
+@import "extras/radios";
+@import "extras/forms";
+@import "extras/input-group";
+@import "extras/images";
+@import "extras/navbar";
+@import "extras/alerts";
+@import "extras/headers";
+@import "extras/type";
+@import "extras/tabs";
+@import "extras/tooltip";
+@import "extras/popover";
+@import "extras/dropdown";
+@import "extras/togglebutton";
+@import "extras/ripples";
+@import "extras/footers";
+@import "extras/sidebar-and-main-panel";
+@import "extras/fixed-plugin";
+@import "extras/tables";
+@import "extras/misc";
+@import "extras/social-buttons";
+
+@import "extras/cards";
+@import "extras/cards/card-stats";
+@import "extras/cards/card-profile";
+@import "extras/cards/card-plain";
+
+//plugin scss
+@import "extras/plugins/animate";
+@import "extras/plugins/chartist";
+@import "extras/plugins/perfect-scrollbar";
+
+@import "extras/responsive";
+
+// FontAwesome
+@import "node_modules/font-awesome/scss/font-awesome.scss";

@@ -2,7 +2,7 @@
 	<div class="wrapper">
 		<sidebar></sidebar>
 		<div class="main-panel">
-			<topHeader></topHeader>
+			<!-- <topHeader></topHeader> -->
 			<div class="content">
 				<router-view/>
 			</div>

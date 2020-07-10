@@ -25,11 +25,9 @@ Auth::routes();
 Route::get('redirect', 'SocialAuthFacebookController@redirect');
 Route::get('callback', 'SocialAuthFacebookController@callback');
 
+Route::get('/{vue?}' , 'Controller@index')->where('vue', '[\/\w\.-]*')->middleware('auth');
 
-
-Route::get('/{any}', 'HomeController@index')->where('any', '.*');
-
-Route::get('/livenow', 'HomeController@list')->name('home');
+// Route::get('/livenow', 'HomeController@list')->name('home');
 
 // Route::get('/home', 'HomeController@index')->name('home');
 

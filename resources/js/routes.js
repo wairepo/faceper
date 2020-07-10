@@ -7,7 +7,8 @@ import list_customer from '@/js/layouts/customers/List';
 import settings from '@/js/layouts/settings/Settings';
 import Live_Now from '@/js/layouts/live_now/Create';
 import not_found from '@/js/views/404';
-import login from '@/js/pages/Login';
+import login from '@/js/layouts/auth/Login';
+import pages from '@/js/layouts/auth/PickPage';
 
 Vue.use(VueRouter)
 
@@ -56,6 +57,12 @@ const router = new VueRouter({
 			name: 'login',
 			meta: { layout: "blank" },
 			component: login
+		},
+		{
+			path: '/pages',
+			name: 'pages',
+			meta: { layout: "blank" },
+			component: pages
 		}
 
 	]

@@ -1,7 +1,7 @@
 <template>
 	<div class="sidebar" data-color="rose" data-background-color="white">
 		<div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-			{{ message }} - {{ reversedMessage }}
+			{{ user_name }}
 		</a></div>
 		<div class="sidebar-wrapper">
 			<ul class="nav">
@@ -22,17 +22,21 @@
 export default {
 	data () {
 		return {
-			message: 'kok wai',
+			user_name: "Kok Wai",
 			activeClass: 'active'
 		}
 	},
 	computed: {
-		reversedMessage: function () {
-	      return this.message.split('').reverse().join('')
-	    },
+		// reversedMessage: function () {
+	 //      return this.message.split('').reverse().join('')
+	 //    },
 	    currentPage: function () {
 	    	return this.$route.path;
 	    }
+	},
+	mounted() {
+
+	    console.log(localStorage)
 	}
 };
 </script>

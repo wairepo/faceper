@@ -8,15 +8,19 @@
 export default {
 	data() {
 		return {
-			info: ""
+			info: "asdasd"
 		}
 	},
-	mounted() {
-		axios.get('/api/livenow', {}).then(function (response) {
-			$this.info = response.data
+	created() {
+
+		this.info = "bvbvbvb"
+
+		axios.get('/api/livenow').then(function (response) {
+			// console.log(response.data)
+			// this.info = "2222"
+
+			// console.log(this.info)
 		})
-
-
 
 	}
 };

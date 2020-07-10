@@ -24,7 +24,9 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/livenow', 'HomeController@list')->name('home');
+    Route::get('/livenow', 'LiveController@list');
+    Route::get('/choose_page', 'PageController@list');
+    Route::post('/create_page', 'PageController@create');
 });
 
 // Route::get('/home', 'HomeController@index')->name('home');

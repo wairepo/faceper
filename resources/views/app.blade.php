@@ -8,7 +8,11 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
-
+<style type="text/css">
+	.selector-for-some-widget {
+		box-sizing: content-box;
+	}
+</style>
 <body class="">
   <div class="wrapper">
     <div id="app"></div>

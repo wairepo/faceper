@@ -7,8 +7,14 @@
 // const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 import './bootstrap'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 import Vue from 'vue'
 import Vuetify from 'vuetify'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 
 import sidebarJS from '@/js/sidebar.js'
 import Routes from '@/js/routes.js'

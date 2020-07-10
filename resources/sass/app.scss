@@ -1,6 +1,13 @@
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons);@charset "UTF-8";
 
+// FontAwesome
+@import "node_modules/font-awesome/scss/font-awesome.scss";
+
+// Bootstrap Vue
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
 @import "extras/variables";
 @import "extras/mixins";
 @import "extras/core-bootstrap";
@@ -40,6 +47,3 @@
 @import "extras/plugins/perfect-scrollbar";
 
 @import "extras/responsive";
-
-// FontAwesome
-@import "node_modules/font-awesome/scss/font-awesome.scss";
