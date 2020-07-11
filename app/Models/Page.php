@@ -6,11 +6,26 @@ use Illuminate\Database\Eloquent\Model;
 
 class Page extends Model
 {
-    protected $fillable = [ 'user_id', 'page_id', 'name', 'category', 'is_deleted', 'deleted_at' ];
+    protected $fillable = [ 'page_id', 'token', 'name', 'category', 'is_deleted', 'deleted_at' ];
     protected $table = 'pages';
 
-    public function user()
+    public function users()
     {
-      return $this->belongsTo(User::class);
+      return $this->belongsToMany(User::class, 'role', 'page_id', 'user_id');
+    }
+
+    public function roles()
+    {
+      return $this->belongsToMany(Role::class);
+    }
+
+    public function setting()
+    {
+      return $this->hasOne(Setting::class);
+    }
+
+    public function locations()
+    {
+      return $this->hasMany(Location::class);
     }
 }

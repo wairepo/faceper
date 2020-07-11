@@ -9,18 +9,18 @@ class AccountService
 {
     public function createOrGetUser(ProviderUser $providerUser)
     {
-        $account = FacebookAccount::whereProvider('facebook')
-            ->whereProviderUserId($providerUser->getId())
-            ->first();
+        // $account = FacebookAccount::whereProvider('facebook')
+        //     ->whereProviderUserId($providerUser->getId())
+        //     ->first();
 
-        if ($account) {
-            return $account->user;
-        } else {
+        // if ($account) {
+        //     return $account->user;
+        // } else {
 
-            $account = new FacebookAccount([
-                'provider_user_id' => $providerUser->getId(),
-                'provider' => 'facebook'
-            ]);
+            // $account = new FacebookAccount([
+            //     'provider_user_id' => $providerUser->getId(),
+            //     'provider' => 'facebook'
+            // ]);
 
             $user = User::whereEmail($providerUser->getEmail())->first();
 
@@ -28,17 +28,18 @@ class AccountService
 
                 $user = User::create([
                     'email' => $providerUser->getEmail(),
+                    'fb_user_id' => $providerUser->getId(),
                     // 'name' => $providerUser->getName(),
                     'first_name' => $providerUser->getName(),
                     'profile_pic' => $providerUser->getAvatar(),
-                    'password' => md5(rand(1,10000)),
+                    'password' => md5(rand(1,10000))
                 ]);
             }
 
-            $account->user()->associate($user);
-            $account->save();
+            // $account->user()->associate($user);
+            // $account->save();
 
             return $user;
-        }
+        // }
     }
 }

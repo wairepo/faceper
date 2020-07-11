@@ -29,6 +29,19 @@ Vue.use(sidebarJS)
 Vue.component('main-page', Main);
 Vue.component('blank', Blank);
 
+Vue.mixin({
+	methods: {
+		makeToast(title, message, variant) {
+			this.toastCount++
+			this.$bvToast.toast(message, {
+				title: title,
+				autoHideDelay: 5000,
+				variant: variant
+			})
+		}
+	}
+})
+
 const app = new Vue({
     el: '#app',
     router: Routes,

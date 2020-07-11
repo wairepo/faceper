@@ -1,45 +1,86 @@
 <template>
 <div>
     <div class="container">
-<!--         <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Login</div>
+        
+        <div>
+            <b-button v-b-modal.modal-center class="none"></b-button>
 
-                    <div class="card-body">
-                        <form method="POST" action="">
+            <b-modal id="modal-center" centered title="Faceper Login" 
+            hide-footer 
+            hide-header-close 
+            visible 
+            no-close-on-backdrop 
+            no-close-on-esc>
 
-                            <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
+            <b-form @submit="onSubmit">
 
-                                <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control is-invalid" name="email" required autocomplete="email" autofocus>
-                                </div>
-                            </div>
+                <b-form-group id="input-group-1">
+                    <b-form-input
+                    id="input-1"
+                    v-model="form.email"
+                    type="email"
+                    required
+                    placeholder="Email Address"
+                    ></b-form-input>
+                </b-form-group>
 
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                <b-form-group id="input-group-2">
+                    <b-form-input
+                    id="input-2"
+                    v-model="form.password"
+                    type="password"
+                    required
+                    placeholder="Password"
+                    ></b-form-input>
+                </b-form-group>
 
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control is-invalid" name="password" required autocomplete="current-password">
+                <b-form-group id="input-group-3">
+                    <b-button type="submit" variant="primary" block>Login</b-button>
+                </b-form-group>
 
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <button v-on:click="facebook_login()" class="btn btn-primary">Login with Facebook</button>
+                <b-form-group id="input-group-4">
+                    <span class="separator">OR</span>
+                </b-form-group>
+
+                <b-form-group id="input-group-5">
+                    <b-button v-on:click="facebook_login()" variant="primary" block>Login with Facebook</b-button>
+                </b-form-group>
+            </b-form>
+            </b-modal>
+        </div>
     </div>
     
 </div>
 </template>
+<style type="text/css">
+.none {
+    display: none;
+}
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+}
+.separator::before {
+    margin-right: .25em;
+}
+.separator::after {
+    margin-left: .25em;
+}
+</style>
 <script type="text/javascript">
 export default {
     data() {
         return {
-            info: ""
+            form: {
+                email: "",
+                password: ""
+            }
         }
     },
     methods: {
@@ -50,14 +91,13 @@ export default {
             .then(function (response) {
                 // console.log(response);
             })
-        }
+        },
+        onSubmit(evt) {
+            evt.preventDefault()
+            alert(JSON.stringify(this.form))
+        },
     },
     mounted() {
-        // axios.get('/api/livenow').then(response => (
-
-        //     console.log(response.data)
-
-        //     ))
 
     }
 };

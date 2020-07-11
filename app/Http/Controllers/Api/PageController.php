@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Facebook\Facebook as Facebook;
 use Facebook\Exceptions\FacebookResponseException;
 use App\Models\Page;
+use App\Models\Role;
+use App\Models\User;
 
 class PageController extends ApiController
 {
@@ -16,8 +18,10 @@ class PageController extends ApiController
   public function list(Request $request)
   {
 
-    if( $request->cookie('page_token') ) {
-      return response()->json(["success" => false, "message" => "page_found"]);
+    $user = User::find(Auth::user()->id);
+
+    if( !empty($user->pages) ) {
+      return response()->json(["success" => false, "message" => "page_exists"]);
     }
 
     $fb = new Facebook();
@@ -40,28 +44,46 @@ class PageController extends ApiController
         "category"      => $value['category'],
         "name"          => $value['name'],
         "value"         => [
-              "id"            => $value['id'],
-              "name"          => $value['name'],
-              "category"      => $value['category']
+              "id"                => $value['id'],
+              "name"              => $value['name'],
+              "category"          => $value['category'],
+              "access_token"      => $value['access_token']
         ]
       ];
 
       array_push($result, $params);
     }
 
-    return response()->json(["success" => true, "data" => $result]);
+    return response()->json(["success" => true, "data" => $result, "pages" => $pages]);
   }
 
   public function create(Request $request)
   {
+    $page = Page::where("page_id", $request['id'])->first();
+
+    if( !empty($page) ) {
+      return response()->json(["success" => false, "message" => "page_exists"]);
+    }
+
     $page = Page::create([
-      'user_id' => Auth::user()->id,
       'page_id' => $request['id'],
+      'token' => $request['access_token'],
       'name' => $request['name'],
       'category' => $request['category']
     ]);
 
     if( $page ) {
+
+      Role::create([ "user_id" => Auth::user()->id, "page_id" => $page->id, "role" => "owner" ]);
+
+      // return response()->json($request->cookie('fb_token'));
+
+      // $fb = new Facebook();
+      // $fb->setDefaultAccessToken($request->cookie('fb_token'));
+      // $res = $fb->get('/'. $page->id );
+
+      // return response()->json($res);
+
       Cookie::queue( "page_token", $page->page_id, 43800);
     }
 

@@ -21,7 +21,8 @@ class SocialAuthFacebookController extends Controller
    */
     public function redirect()
     {
-      $permissions = ['pages_show_list', 'pages_read_user_content', 'pages_manage_posts', 'publish_video', 'pages_messaging', 'pages_read_engagement', 'pages_manage_engagement', 'publish_to_groups'];
+      $permissions = ['pages_show_list', 'pages_read_user_content', 'pages_manage_posts', 'publish_video', 'pages_messaging', 'pages_read_engagement', 'pages_manage_engagement', 'publish_to_groups', 'pages_manage_metadata'];
+      // $permissions = ['pages_show_list', 'pages_read_user_content', 'pages_manage_posts', 'publish_video', 'pages_messaging', 'pages_read_engagement', 'pages_manage_engagement', 'publish_to_groups', 'pages_manage_metadata', 'manage_page'];
       $fields = ['email', 'first_name', 'last_name', 'picture'];
 
       return Socialite::driver('facebook')->fields($fields)->scopes($permissions)->redirect();
@@ -34,9 +35,9 @@ class SocialAuthFacebookController extends Controller
      */
     public function callback(AccountService $service)
     {
-      $abc = Socialite::driver('facebook')->user();
-		  $user = $service->createOrGetUser($abc);
-      $token = $abc->token;
+      $fbresult = Socialite::driver('facebook')->user();
+		  $user = $service->createOrGetUser($fbresult);
+      $accessToken = $fbresult->token;
 
       $fb = new Facebook([
         'app_id' => ENV('FB_APP_ID'),
@@ -44,14 +45,30 @@ class SocialAuthFacebookController extends Controller
         'default_graph_version' => 'v2.3',
       ]);
 
-      $fb->setDefaultAccessToken((string)$token);
+      $fb->setDefaultAccessToken((string)$accessToken);
 
-      $checkToken = $fb->get('/oauth/access_token?grant_type=fb_exchange_token&client_id='. ENV('FB_APP_ID') .'&client_secret='. ENV('FB_APP_SECRET') .'&fb_exchange_token=' . (string)$token);
+      $checkToken = $fb->get('/oauth/access_token?grant_type=fb_exchange_token&client_id='. ENV('FB_APP_ID') .'&client_secret='. ENV('FB_APP_SECRET') .'&fb_exchange_token=' . (string)$accessToken);
 
       $checkTokenRes = $checkToken->getGraphNode();
 
       $accessToken = $checkTokenRes['access_token'];
-      $fb->setDefaultAccessToken($accessToken);
+      $fb->setDefaultAccessToken((string)$accessToken);
+
+      // if (! $accessToken->isLongLived()) {
+
+        $oAuth2Client = $fb->getOAuth2Client();
+        $tokenMetadata = $oAuth2Client->debugToken($accessToken);
+
+        $tokenMetadata->validateAppId(ENV('FB_APP_ID'));
+        $tokenMetadata->validateExpiration();
+        try {
+          $accessToken = $oAuth2Client->getLongLivedAccessToken($accessToken);
+          $fb->setDefaultAccessToken($accessToken);
+        } catch (Facebook\Exceptions\FacebookSDKException $e) {
+          echo "<p>Error getting long-lived access token: " . $e->getMessage() . "</p>\n\n";
+          exit;
+        }
+      // }
 
       Cookie::queue( "fb_token", $accessToken, 43800 );
       Cookie::queue( "u", $user->id, 43800 );

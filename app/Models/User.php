@@ -40,6 +40,12 @@ class User extends Authenticatable
 
     public function pages()
     {
-      return $this->hasMany(Page::class);
+      // return $this->hasMany(Page::class);
+      return $this->belongsToMany(Page::class, 'roles', 'user_id', 'page_id');
+    }
+
+    public function roles()
+    {
+      return $this->belongsToMany(Role::class);
     }
 }

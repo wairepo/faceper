@@ -29,4 +29,11 @@ class SocialAuthFacebookController extends Controller
         auth()->login($user);
         return redirect()->to('/');
     }
+
+    public function logout(Request $request)
+    {
+        if ($request->wantsJson()) {
+            return response()->json([], 204);
+        }
+    }
 }

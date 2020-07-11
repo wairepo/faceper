@@ -43,20 +43,20 @@ module.exports = {
 
     },
     methods: {
-        makeToast(append = false) {
-            this.toastCount++
-            this.$bvToast.toast(`This is toast number ${this.toastCount}`, {
-              title: 'BootstrapVue Toast',
-              autoHideDelay: 5000,
-              appendToast: append
-          })
-        },
         choose_page() {
 
             axios.post('/api/create_page', this.page)
             .then(response => {
                 if( response.data['success'] == true ) {
                     this.$router.push("/")
+                } else {
+
+                    if( response.data['message'] == "page_exists" ) {
+                        this.makeToast("Error", "Facebook page already exists.", "danger")
+                        this.$router.push("/")
+                    } else {
+                        this.makeToast("Error", "Choose facebook page error.", "danger")
+                    }
                 }
             })
         }
@@ -69,9 +69,10 @@ module.exports = {
             if( response.data['success'] == true ) {
                 this.list_pages = response.data['data']
             } else {
-                this.$router.push("/")
+                if( response.data['message'] == "page_exists" ) {
+                    this.$router.push("/")
+                }
             }
-            
         })
     }
 };
