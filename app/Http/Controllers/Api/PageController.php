@@ -37,21 +37,24 @@ class PageController extends ApiController
 
     foreach ($pages as $key => $value) {
 
-      $params = [
+      if( in_array("MANAGE", $value['tasks']) ) {
 
-        "id"            => $value['id'],
-        "access_token"  => $value['access_token'],
-        "category"      => $value['category'],
-        "name"          => $value['name'],
-        "value"         => [
-              "id"                => $value['id'],
-              "name"              => $value['name'],
-              "category"          => $value['category'],
-              "access_token"      => $value['access_token']
-        ]
-      ];
+        $params = [
 
-      array_push($result, $params);
+          "id"            => $value['id'],
+          "access_token"  => $value['access_token'],
+          "category"      => $value['category'],
+          "name"          => $value['name'],
+          "value"         => [
+                "id"                => $value['id'],
+                "name"              => $value['name'],
+                "category"          => $value['category'],
+                "access_token"      => $value['access_token']
+          ]
+        ];
+
+        array_push($result, $params);
+      }
     }
 
     return response()->json(["success" => true, "data" => $result, "pages" => $pages]);
