@@ -5,7 +5,7 @@ import Home from '@/js/components/Home';
 import list_order from '@/js/layouts/orders/List';
 import list_customer from '@/js/layouts/customers/List';
 import settings from '@/js/layouts/settings/Settings';
-import Live_Now from '@/js/layouts/live_now/Create';
+import Live_Now from '@/js/layouts/live_now/List';
 import not_found from '@/js/views/404';
 import login from '@/js/layouts/auth/Login';
 import pages from '@/js/layouts/auth/PickPage';

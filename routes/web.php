@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 // });
 Auth::routes();
 
-Route::get('redirect', 'SocialAuthFacebookController@redirect');
+Route::get('redirect', 'SocialAuthFacebookController@redirect')->middleware('cors');
 Route::get('callback', 'SocialAuthFacebookController@callback');
 
 Route::get('/{vue?}' , 'Controller@index')->where('vue', '[\/\w\.-]*')->middleware('auth');

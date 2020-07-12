@@ -7,6 +7,8 @@
   <title>Faceper</title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/material/sidebar.css') }}" type="text/css">
+
 </head>
 <style type="text/css">
 	.selector-for-some-widget {

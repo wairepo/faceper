@@ -1,8 +1,8 @@
 <template>
 	<div class="sidebar" data-color="rose" data-background-color="white">
-		<div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
+		<div class="logo">
 			{{ user_name }}
-		</a></div>
+		</div>
 		<div class="sidebar-wrapper">
 			<ul class="nav">
 				<router-link tag="li" class="nav-item" 
