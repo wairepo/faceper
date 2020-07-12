@@ -1,21 +1,30 @@
 <template>
-	<div class="sidebar" data-color="rose" data-background-color="white">
-		<div class="logo">
-			{{ user_name }}
-		</div>
-		<div class="sidebar-wrapper">
-			<ul class="nav">
-				<router-link tag="li" class="nav-item" 
-				:class="[!currentPage.includes('livenow') && !currentPage.includes('orders') && !currentPage.includes('customers') && !currentPage.includes('settings') ? activeClass : '']" 
-				to="/"><a class="nav-link">Dashboard</a></router-link>
-				<router-link tag="li" class="nav-item" :class="[currentPage.includes('livenow') ? activeClass : '']" to="/livenow"><a class="nav-link">Go Live NOW!</a></router-link>
-				<router-link tag="li" class="nav-item" :class="[currentPage.includes('orders') ? activeClass : '']" to="/orders"><a class="nav-link">Orders</a></router-link>
-				<router-link tag="li" class="nav-item" :class="[currentPage.includes('customers') ? activeClass : '']" to="/customers"><a class="nav-link">Customers</a></router-link>
-				<router-link tag="li" class="nav-item" :class="[currentPage.includes('settings') ? activeClass : '']" to="/settings"><a class="nav-link">Settings</a></router-link>
-				<router-link tag="li" class="nav-item active-pro" to="/"><a class="nav-link" @click="logout()">Logout</a></router-link>
-			</ul>
-		</div>
-	</div>
+	<div>
+		<b-button size="sm" variant="primary" v-b-toggle.sidebar-backdrop><b-icon icon="layout-text-sidebar"></b-icon></b-button>
+		<b-sidebar
+		id="sidebar-backdrop"
+		title="Sidebar with backdrop"
+		backdrop-variant="light"
+		no-header-close
+		backdrop
+		shadow
+		>
+		<nav class="mb-3">
+			<router-link class="nav-item" 
+			to="/"><a :class="[!currentPage.includes('posts') && !currentPage.includes('orders') && !currentPage.includes('customers') && !currentPage.includes('settings') ? 'bg-secondary' : '']" class="nav-link text-dark">Dashboard</a></router-link>
+			<router-link class="nav-item bg-primary" to="/posts"><a :class="[currentPage.includes('posts') ? 'bg-secondary' : '']" class="nav-link text-dark">LIVE Posts</a></router-link>
+			<router-link class="nav-item" to="/orders"><a :class="[currentPage.includes('orders') ? 'bg-secondary' : '']" class="nav-link text-dark">Orders</a></router-link>
+			<router-link class="nav-item" to="/customers"><a :class="[currentPage.includes('customers') ? 'bg-secondary' : '']" class="nav-link text-dark">Customers</a></router-link>
+			<router-link class="nav-item" to="/settings"><a :class="[currentPage.includes('settings') ? 'bg-secondary' : '']" class="nav-link text-dark">Settings</a></router-link>
+		</nav>
+		<template v-slot:footer="{ hide }">
+			<div class="d-flex mr-auto text-light align-items-center px-3 py-2">
+				<strong class="mr-auto"><router-link class="nav-item active-pro" to="/"><a class="nav-link" @click="logout()">Logout</a></router-link></strong>
+				<b-button size="sm" variant="primary" @click="hide"><b-icon icon="layout-text-sidebar"></b-icon></b-button>
+			</div>
+		</template>
+	</b-sidebar>
+</div>
 </template>
 <style type="text/css">
 	.logo {
@@ -27,7 +36,7 @@ export default {
 	data () {
 		return {
 			user_name: "Kok Wai",
-			activeClass: 'active'
+			activeClass: 'active',
 		}
 	},
 	computed: {
