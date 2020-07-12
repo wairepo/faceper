@@ -17,7 +17,11 @@
 		</div>
 	</div>
 </template>
-
+<style type="text/css">
+	.logo {
+		text-align: center;
+	}
+</style>
 <script type="text/javascript">
 export default {
 	data () {
