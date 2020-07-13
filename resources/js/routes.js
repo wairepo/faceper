@@ -23,7 +23,7 @@ const router = new VueRouter({
 			component: Home
 		},
 		{
-			path: '/livenow',
+			path: '/posts',
 			name: 'livenow',
 			meta: { layout: "main-page" },
 			component: Live_Now

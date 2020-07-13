@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<sidebar></sidebar>
-		<div class="">
+
 <!-- 			<nav class="sidebarbar sidebarbar-expand-lg sidebarbar-transparent sidebarbar-absolute fixed-top">
 				<div class="container-fluid">
 					<div class="sidebarbar-wrapper">
@@ -19,7 +19,6 @@
 			<!-- <div class="wrapper"> -->
 				<router-view/>
 			<!-- </div> -->
-		</div>
 	</div>
 </template>
 <style type="text/css">
