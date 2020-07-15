@@ -61,11 +61,20 @@ class LiveController extends Controller
       // $user = $fb->get('/' . $id . '/accounts');
       // $pages = $user->getGraphEdge()->asArray();
 
-      return response()->json(["success" => true, "data" => []]);
+      return response()->json(["success" => true, "data" => [123123,123123,123231]]);
     }
 
     public function create(Request $request)
     {
       
+    }
+
+    public function webhook()
+    {
+      Post::create([
+        'page_id' => 1111,
+        'post_id' => 33333,
+        'description' => 11111
+      ]);
     }
 }

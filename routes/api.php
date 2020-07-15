@@ -24,9 +24,22 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/livenow', 'LiveController@list');
-    Route::get('/choose_page', 'PageController@list');
-    Route::post('/create_page', 'PageController@create');
+
+    Route::group(['prefix' => 'pages'], function(){
+	    Route::get('/choose_page', 'PageController@list');
+	    Route::post('/create_page', 'PageController@create');
+	    Route::post('/', 'PageController@create');
+    });
+
+    Route::group(['prefix' => 'posts'], function(){
+	    // Route::get('/choose_page', 'PageController@list');
+	    // Route::post('/create_page', 'LiveController@create');
+	    Route::get('/', 'LiveController@list');
+    });
+
+    Route::group(['prefix' => 'webhook'], function(){
+	    Route::post('/create', 'WebhookController@create');
+    });
 });
 
 // Route::get('/home', 'HomeController@index')->name('home');

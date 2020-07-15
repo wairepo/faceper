@@ -1,43 +1,21 @@
 <template>
 	<div>
 		<sidebar></sidebar>
-
-<!-- 			<nav class="sidebarbar sidebarbar-expand-lg sidebarbar-transparent sidebarbar-absolute fixed-top">
-				<div class="container-fluid">
-					<div class="sidebarbar-wrapper">
-						<a class="sidebarbar-brand" href="javascript:;"></a>
-					</div>
-					<button class="sidebarbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle sidebarigation">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="sidebarbar-toggler-icon icon-bar"></span>
-						<span class="sidebarbar-toggler-icon icon-bar"></span>
-						<span class="sidebarbar-toggler-icon icon-bar"></span>
-					</button>
-				</div>
-				<hr>
-			</nav> -->
-			<!-- <div class="wrapper"> -->
-				<router-view/>
-			<!-- </div> -->
+		<div class="mr-auto" >
+			<b-button class="fixed_top" size="sm" variant="primary" v-b-toggle.sidebar-backdrop><b-icon icon="arrow-bar-right"></b-icon></b-button>
+		</div>
+		<hr style="width:100%;text-align:left;margin-left:0">
+		<router-view/>
 	</div>
 </template>
-<style type="text/css">
-/*	.fixed-top {
-		margin: -12px -10px 10px;
-		border: 0;
-		border-bottom: 1px solid #c9c7c7;
-		width: 100%;
-	}*/
-</style>
-<script type="text/javascript">
-	import sidebar from '@/js/components/Sidebar';
-	// import topHeader from '@/js/components/Header';
 
-	export default {
-		components: {
-			sidebar,
-			// topHeader
-		}
-	};
+<script type="text/javascript">
+import sidebar from '@/js/components/Sidebar';
+
+export default {
+	components: {
+		sidebar
+	}
+};
 </script>
 

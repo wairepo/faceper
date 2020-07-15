@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<b-button class="fixed_top" size="sm" variant="primary" v-b-toggle.sidebar-backdrop><b-icon icon="arrow-bar-right"></b-icon></b-button>
+		
 		<b-sidebar
 		id="sidebar-backdrop"
 		backdrop-variant="light"
@@ -9,7 +9,7 @@
 		shadow
 		>
 		<div class="h-10 mb-5 mr-auto" >
-			<span>asdasdasd</span>
+			<b-avatar src="https://placekitten.com/300/300" size="6rem" class="ml-3"></b-avatar>
 			<hr style="width:100%;text-align:left;margin-left:0">
 		</div>
 		<b-list-group>
@@ -77,7 +77,6 @@ export default {
 	},
 	mounted() {
 
-	    console.log(localStorage)
 	}
 };
 </script>
