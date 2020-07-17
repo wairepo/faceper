@@ -20,7 +20,7 @@
                     v-model="form.email"
                     type="email"
                     required
-                    placeholder="邮件"
+                    placeholder="Email Address"
                     ></b-form-input>
                 </b-form-group>
 
@@ -30,7 +30,7 @@
                     v-model="form.password"
                     type="password"
                     required
-                    placeholder="密码"
+                    placeholder="Password"
                     ></b-form-input>
                 </b-form-group>
 
