@@ -30,7 +30,7 @@
                     v-model="form.password"
                     type="password"
                     required
-                    placeholder="Password"
+                    placeholder="密码"
                     ></b-form-input>
                 </b-form-group>
 
