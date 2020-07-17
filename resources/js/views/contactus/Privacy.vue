@@ -1,6 +1,11 @@
 <template>
 	<div>
-		<b-container class="bv-example-row">
+		<b-row>
+			<b-col></b-col>
+			<b-col cols="5"></b-col>
+			<b-col class="text-right mr-3"><b-link href="/login">Login</b-link></b-col>
+		</b-row>
+		<b-container>
 			<b-row class="">
 				<b-col></b-col>
 				<b-col cols="8"><h1 style="text-align: left;">Privacy Policy</h1><br>
