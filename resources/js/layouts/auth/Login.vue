@@ -20,7 +20,7 @@
                     v-model="form.email"
                     type="email"
                     required
-                    placeholder="Email Address"
+                    placeholder="Email"
                     ></b-form-input>
                 </b-form-group>
 

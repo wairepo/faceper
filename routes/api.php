@@ -26,9 +26,9 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'auth'], function() {
 
     Route::group(['prefix' => 'pages'], function(){
-	    Route::get('/choose_page', 'PageController@list');
-	    Route::post('/create_page', 'PageController@create');
-	    Route::post('/', 'PageController@create');
+	    Route::get('/choose', 'PageController@list');
+	    Route::post('/create', 'PageController@create');
+	    // Route::post('/', 'PageController@list');
     });
 
     Route::group(['prefix' => 'posts'], function(){

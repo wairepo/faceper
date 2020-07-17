@@ -4,14 +4,6 @@
 // FontAwesome
 @import "node_modules/font-awesome/scss/font-awesome.scss";
 
-@import "extras/variables";
-@import "extras/mixins";
-@import "extras/core-bootstrap";
-
-// Core Components
-@import "extras/sidebar-and-main-panel";
-@import "extras/misc";
-
 // Bootstrap Vue
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';

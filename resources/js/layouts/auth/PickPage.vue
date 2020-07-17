@@ -45,7 +45,7 @@ module.exports = {
     methods: {
         choose_page() {
 
-            axios.post('/api/create_page', this.page)
+            axios.post('/api/pages/create', this.page)
             .then(response => {
                 if( response.data['success'] == true ) {
                     this.$router.push("/")
@@ -62,7 +62,7 @@ module.exports = {
         }
     },
     mounted() {
-        axios.get('/api/choose_page', {
+        axios.get('/api/pages/choose', {
         })
         .then(response => {
 
