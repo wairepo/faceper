@@ -13,39 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/{any?}', function (){
-//     return view('app');
-// })->where('any', '^(?!api\/)[\/\w\.-]*');
+// Auth::routes();
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Auth::routes();
+Route::get('login', 'Controller@index')->name('login');
 
 Route::get('redirect', 'SocialAuthFacebookController@redirect')->middleware('cors');
 Route::get('callback', 'SocialAuthFacebookController@callback');
 
 Route::get('/{vue?}' , 'Controller@index')->where('vue', '[\/\w\.-]*')->middleware('auth');
-
-// Route::get('/livenow', 'HomeController@list')->name('home');
-
-// Route::get('/home', 'HomeController@index')->name('home');
-
-// Route::get('/test', 'TestController@index');
-// Route::get('/test1', 'TestController@fblogin');
-// Route::get('/fbcallback', 'TestController@callback');
-
-// Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');
-
-// Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');
-
-
-
-
-// Route::prefix('livenow')->group(function () {
-//     Route::get('list', 'HomeController@list');
-// });

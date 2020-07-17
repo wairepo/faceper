@@ -21,7 +21,7 @@
 				LIVE Posts
 			</b-list-group-item>
 
-			<b-list-group-item href="/" :variant="currentPage.includes('orders') ? 'secondary' : ''" class="b-none d-flex justify-content-between align-items-center">
+			<b-list-group-item href="/orders" :variant="currentPage.includes('orders') ? 'secondary' : ''" class="b-none d-flex justify-content-between align-items-center">
 				Orders
 				<b-badge variant="danger" pill>14</b-badge>
 			</b-list-group-item>
