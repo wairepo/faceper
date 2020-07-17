@@ -23,7 +23,6 @@ class Controller extends BaseController
       // }else{
         // return view('sidebar');
       // }
-
       return view('app');
     }
 }

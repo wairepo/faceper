@@ -6,28 +6,33 @@
 
 // const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
-import './bootstrap'
+import './bootstrap.js'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import Vue from 'vue'
+
+import router from './routes.js'
+window.router = router
+
+// import Vue from 'vue'
 import Vuetify from 'vuetify'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
+require('./components.js');
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
-import sidebarJS from '@/js/sidebar.js'
-import Routes from '@/js/routes.js'
+// import sidebarJS from '@/js/sidebar.js'
+// import Routes from '@/js/routes.js'
+
+
+
+// window.Routes = Routes
 
 import App from '@/js/views/App'
-import Main from '@/js/views/Main'
-import Blank from '@/js/views/Blank'
 
 Vue.use(Vuetify)
-Vue.use(sidebarJS)
-
-Vue.component('main-page', Main);
-Vue.component('blank', Blank);
+// Vue.use(sidebarJS)
 
 Vue.mixin({
 	methods: {
@@ -44,12 +49,35 @@ Vue.mixin({
 
 const app = new Vue({
     el: '#app',
-    router: Routes,
+    router,
     vuetify : new Vuetify(),
     render: h => h(App)
 });
 
-export default app;
+require('./routes/routes.js');
+
+// export default app;
+
+router.beforeEach((to, from, next) => {
+  app.$unsaved.clear()
+  next()
+})
+
+
+/**
+ * Route after change event
+ *
+ * Update sidebar "selected" class by detecting route path
+ * by @frost
+ */
+router.afterEach((to, from, next) => {
+  var path = to.path.split('/');
+  path = path.filter(entry => /\S/.test(entry))[0];
+  // store.state.sidebar_selected = path;
+  // window.Intercom('update');
+  // store.commit('update') // Vuex update global store.state and update intercom
+  // tracking.pageview(to.path);
+})
 
 // window.Vue = require('vue');
 
