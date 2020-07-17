@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 // Auth::routes();
 
 Route::get('login', 'Controller@index')->name('login');
+Route::post('logout', 'AuthController@logout');
 
 Route::get('redirect', 'SocialAuthFacebookController@redirect')->middleware('cors');
 Route::get('callback', 'SocialAuthFacebookController@callback');
