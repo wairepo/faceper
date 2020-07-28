@@ -1,11 +1,11 @@
 <template>
 	<div>
-		<sidebar></sidebar>
-		<div class="mr-auto" >
-			<b-button class="fixed_top" size="sm" variant="primary" v-b-toggle.sidebar-backdrop><b-icon icon="arrow-bar-right"></b-icon></b-button>
+		<div class="mr-auto mb-5">
+			<b-button class="position-fixed" size="sm" variant="primary" v-b-toggle.sidebar-backdrop><b-icon icon="arrow-bar-right"></b-icon></b-button>
 		</div>
 		<hr style="width:100%;text-align:left;margin-left:0">
 		<router-view/>
+		<sidebar></sidebar>
 	</div>
 </template>
 

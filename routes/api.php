@@ -25,6 +25,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'auth'], function() {
 
+      Route::group(['prefix' => 'global'], function(){
+        Route::get('/' , 'GlobalController@global');
+    });
+
     Route::group(['prefix' => 'pages'], function(){
 	    Route::get('/choose', 'PageController@list');
 	    Route::post('/create', 'PageController@create');
@@ -32,15 +36,20 @@ Route::group(['middleware' => 'auth'], function() {
     });
 
     Route::group(['prefix' => 'posts'], function(){
-	    // Route::get('/choose_page', 'PageController@list');
-	    // Route::post('/create_page', 'LiveController@create');
-	    Route::get('/', 'LiveController@list');
+        Route::get('/', 'LiveController@list');
+        Route::get('/{id}', 'LiveController@retrieve');
+        Route::post('/create', 'LiveController@create');
+        Route::post('/check_valid_url', 'LiveController@check_url');
+        // Keywords
+	    Route::post('/keywords/new', 'KeywordController@create');
     });
 
     Route::group(['prefix' => 'webhook'], function(){
 	    Route::post('/create', 'WebhookController@create');
     });
 });
+
+Route::get('webhook/callback', 'WebhookController@create');
 
 // Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/livenow', 'HomeController@list')->name('home');

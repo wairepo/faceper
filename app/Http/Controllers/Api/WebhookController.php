@@ -14,10 +14,19 @@ class WebhookController extends Controller
 {
     public function create()
     {
-      Post::create([
-        'page_id' => 1111,
-        'post_id' => 33333,
-        'description' => 11111
-      ]);
+
+		// $challenge = $_REQUEST['hub_challenge'];
+		// $verify_token = $_REQUEST['hub_verify_token'];
+
+		// if ($verify_token === '123123123sdfsdfsdfsdfsdf') {
+		// 	echo $challenge;
+		// }
+
+
+		Post::create([
+		'page_id' => 1111,
+		'post_id' => 33333,
+		'description' => 11111
+		]);
     }
 }

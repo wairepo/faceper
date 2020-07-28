@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Helpers\General;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Facebook\Facebook as Facebook;
 use Facebook\Exceptions\FacebookResponseException;
 use Facebook\Exceptions\FacebookSDKException;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Post;
 
 class LiveController extends Controller
 {
@@ -20,7 +22,7 @@ class LiveController extends Controller
 
       // $fb->setDefaultAccessToken($request->cookie('fb_token'));
 
-// 106492701074229_145341577189341/sharedposts?fields=from,created_time,to{name,profile_type}
+      // 106492701074229_145341577189341/sharedposts?fields=from,created_time,to{name,profile_type}
 
       // try {
       //   // Returns a `FacebookFacebookResponse` object
@@ -66,7 +68,45 @@ class LiveController extends Controller
 
     public function create(Request $request)
     {
-      
+
+      $post = Post::where("post_id", $request['post_id'])->first();
+
+      if( $post ) {
+        return response()->json([ "success" => false, "message" => "post_already_exists" ]);
+      }
+
+      $post = Post::create([
+        'page_id' => $request->cookie("p"),
+        'post_id' => $request['post_id'],
+        'type' => $request['type'],
+        'title' => isset($request['data']['title']) ? $request['data']['title'] : null,
+        'url' => $request['data']['permalink_url'],
+        'published_at' => $request['data']['updated_time']['date'],
+        'timezone' => $request['data']['updated_time']['timezone'],
+        'description' => isset($request['data']['description']) ? $request['data']['description'] : null
+      ]);
+
+      if( $post ) {
+        return response()->json([ "success" => true, "message" => "record_create_successfully", "data" => $post ]);
+      }
+        
+      return response()->json([ "success" => false, "message" => "post_create_failed" ]);
+    }
+
+    public function retrieve(Request $request, $id)
+    {
+
+      if( !$id ) {
+        return response()->json([ "success" => false, "message" => "Post_ID_not_found" ]);
+      }
+
+      $post = Post::find($id);
+
+      if( $post ) {
+        return response()->json([ "success" => true, "data" => $post ]);
+      }
+
+      return response()->json([ "success" => false, "message" => "post_not_found" ]);      
     }
 
     public function webhook()
@@ -77,4 +117,75 @@ class LiveController extends Controller
         'description' => 11111
       ]);
     }
+
+    public function check_url(Request $request)
+    {
+
+      $post = Post::where("post_id", $request['post_id'])->first();
+
+      if( $post ) {
+        return response()->json([ "success" => false, "message" => "post_already_exists" ]);
+      }
+
+      if( !is_numeric($request['post_id']) ) {
+        return response()->json(["success" => false, "message" => "post_id_invalid", "data" => []]);
+      }
+
+      try {
+
+        $fb = new Facebook();
+
+        $fb->setDefaultAccessToken($request->cookie('fb_token'));
+
+        $response = $fb->get( "/" . (integer)$request['post_id'] . "?fields=permalink_url,embed_html,from,format,embeddable,title,description,updated_time" );
+
+        $response = $response->getGraphNode()->asArray();
+
+        if( isset($response['error']) ) {
+          return response()->json([ "success" => false, "message" => "fb_video_not_found", "data" => $response ]);
+        }
+
+        return response()->json([ "success" => true, "data" => $response ]);
+
+      } catch(FacebookResponseException $e) {
+
+        return response()->json([ "success" => false, "message" => "fb_response_error", "data" => General::fb_error_return($e->getResponseData()['error']['code']), "ref" => $e->getResponseData() ]);
+
+      } catch(FacebookSDKException $e) {
+
+        return response()->json([ "success" => false, "message" => "fb_sdk_error", "data" => $e->getMessage() ]);
+
+      }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

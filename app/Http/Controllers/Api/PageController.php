@@ -20,8 +20,16 @@ class PageController extends ApiController
 
     $user = User::find(Auth::user()->id);
 
-    // if( !empty($user->pages) ) {
-    if( $request->cookie("page_token") ) {
+    if( $request->cookie("p") ) {
+      return response()->json(["success" => false, "message" => "page_exists"]);
+    }
+
+    $page = $user->pages;
+
+    if( !empty($page) ) {
+
+      Cookie::queue( "p", $page[0]['id'], 43800);
+
       return response()->json(["success" => false, "message" => "page_exists"]);
     }
 
@@ -67,12 +75,12 @@ class PageController extends ApiController
 
     if( !empty($page) ) {
 
-      Cookie::queue( "page_token", $page->page_id, 43800);
+      Cookie::queue( "p", $page->page_id, 43800);
       
       return response()->json(["success" => false, "message" => "page_exists"]);
     }
 
-    if( $request->cookie("page_token") ) {
+    if( $request->cookie("p") ) {
       return response()->json(["success" => false, "message" => "page_exists"]);
     }
 
@@ -95,7 +103,7 @@ class PageController extends ApiController
 
       // return response()->json($res);
 
-      Cookie::queue( "page_token", $page->page_id, 43800);
+      Cookie::queue( "p", $page->page_id, 43800);
     }
 
     return response()->json(["success" => true]);

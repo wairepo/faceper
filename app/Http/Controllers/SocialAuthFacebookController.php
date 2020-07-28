@@ -12,6 +12,8 @@ use Facebook\Facebook as Facebook;
 use Facebook\Exceptions\FacebookResponseException;
 use Facebook\Exceptions\FacebookSDKException;
 
+use App\Models\Permission;
+
 class SocialAuthFacebookController extends Controller
 {
   /**
@@ -21,8 +23,9 @@ class SocialAuthFacebookController extends Controller
    */
     public function redirect()
     {
-      $permissions = ['pages_show_list', 'pages_read_user_content', 'pages_manage_posts', 'publish_video', 'pages_messaging', 'pages_read_engagement', 'pages_manage_engagement', 'publish_to_groups', 'pages_manage_metadata'];
-      // $permissions = ['pages_show_list', 'pages_read_user_content', 'pages_manage_posts', 'publish_video', 'pages_messaging', 'pages_read_engagement', 'pages_manage_engagement', 'publish_to_groups', 'pages_manage_metadata', 'manage_page'];
+
+      $permissions = Permission::where("is_published", 1)->pluck("permission");
+
       $fields = ['email', 'first_name', 'last_name', 'picture'];
 
       return Socialite::driver('facebook')->fields($fields)->scopes($permissions)->redirect();
