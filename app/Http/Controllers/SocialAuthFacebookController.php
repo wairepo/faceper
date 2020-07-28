@@ -28,7 +28,7 @@ class SocialAuthFacebookController extends Controller
 
       $fields = ['email', 'first_name', 'last_name', 'picture'];
 
-      return Socialite::driver('facebook')->fields($fields)->scopes($permissions)->redirect();
+      return Socialite::driver('facebook')->fields($fields)->scopes(json_decode($permissions))->redirect();
     }
 
     /**
